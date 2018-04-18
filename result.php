@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Information</title>
-        <meta charset="GBK"/>
+        <meta charset="utf-8"/>
     </head>
 
     <body>
