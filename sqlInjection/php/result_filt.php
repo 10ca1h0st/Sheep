@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Information</title>
-    <meta charset="utf-8"/>
+    <meta charset="GBK"/>
 </head>
 
 <body>
@@ -15,8 +15,8 @@ if(!$username||!$password)
     echo "You have not entered username or password. Please go back and enter both of them.";
     exit;
 }
-
-if (preg_match("/^([0-9]|\-|\#|\/\*|\*\/|(union)+|(select)+|[a-zA-Z]|\_|)*'([0-9]|\-|\#|\/\*|\*\/|(union)+|(select)+|[a-zA-Z]|\_|)*$/", $username))
+if (preg_match("/^.*((union)|(select)|\')*.*$/",$username))
+//if (preg_match("/^([0-9]|\-|\#|\/\*|\*\/|(union)|(select)|[a-zA-Z]|\_|)*'([0-9]|\-|\#|\/\*|\*\/|(union)*|(select)*|[a-zA-Z]|\_|)*$/", $username))
 {
     echo "Please enter correct Username!";
     exit;
