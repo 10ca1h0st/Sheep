@@ -1,0 +1,162 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+
+<link href="../sqlInjection/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../sqlInjection/css/login.css" rel="stylesheet">
+
+<title>登录</title>
+</head>
+
+<body>
+    <div class='container-fluid' style='height:100%;'>
+        <div class='row' style='height:100%;'>
+            <div class='col-md-3 col-xs-3 col-sm-3'></div>
+            <div class='col-md-6'>
+                    <div class='row' style='height:100%'>
+                        <div class='col-md-2 col-xs-2 col-sm-2'></div>
+                        <div class='col-md-8 col-xs-8 col-sm-8' style='height:100%'>
+                        <div style='position:relative;left:15%;top:20%;width:70%;height:60%;'>
+                            <form>
+                                <div class='form-group has-feedback'>
+                                    <label class="control-label" for='stu_num'>用户名</label>
+                                    <div class='input-group'>
+                                        <div class="input-group-addon">N</div>
+                                        <input type='text' class='form-control' id='stu_num' placeholder='username' >
+                                    </div>
+                                    <div class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></div>
+                                    <div class="alert alert-danger alert-dismissable hidden" id='login_check_n'>
+                                        <a href="#" class="close">&times;</a>
+                                        <em>请输入学号</em>
+                                    </div>
+                                </div>
+                                <div class='form-group has-feedback'>
+                                    <label class="control-label" for='password'>密码</label>
+                                    <div class='input-group'>
+                                        <div class='input-group-addon'>P</div>
+                                        <input type='password' class='form-control' id='password' placeholder='password' >
+                                    </div>
+                                    <div class="glyphicon glyphicon-eye-close form-control-feedback" aria-hidden="true"></div>
+                                    <div class="alert alert-danger alert-dismissable hidden" id='login_check_p'>
+                                        <a href="#" class="close">&times;</a>
+                                        <em>请输入密码</em>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary" id='signin'>登录</button>
+                                <button type="button" class="btn btn-primary" id='signin_medium'>登录(csrf_medium)</button>
+                            </form>
+                        </div>
+                        </div>
+                        <div class='col-md-2 col-xs-2 col-sm-2'></div>
+                    </div>
+                </div>
+                <div style='height:15%;'></div>
+            </div>
+            <div class='col-md-3 col-xs-3 col-sm-3'></div>
+        </div>
+    </div>
+
+<script src="../sqlInjection/js/jquery.js"></script>
+<script src="../sqlInjection/css/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    
+    var signin=document.getElementById('signin');
+    if(window.addEventListener){
+        signin.addEventListener('click',check,false);
+    }
+    else{
+        signin.attachEvent('onclick',check);
+    }
+    
+    var closes=$('.close');
+    
+    closes.on('click',hideClose);
+    
+    
+    
+    function hideClose(e){
+        
+        e=window.event || e;
+        var obj=e.target?e.target:e.srcElement;
+        var $obj_j = $(obj);
+        
+        var $p=$($obj_j.parent()[0]);
+        $p.addClass('hidden');
+    }
+    
+    
+    function check(e){
+        e= window.event || e;
+        var username=document.getElementById('stu_num');
+        var password=document.getElementById('password');
+        if(username.value==''){
+            var no_num=$('#login_check_n');
+            no_num.removeClass('hidden');
+        }
+        else if(password.value==''){
+            var no_pass=$('#login_check_p');
+            no_pass.removeClass('hidden');
+        }
+        else{
+            e.preventDefault();
+            if(window.event){
+                window.event.returnValue=false;
+            }
+            window.location.href='./victim.php?'+'username='+username.value+'&password='+password.value;
+        }
+    }
+
+    //csrf medium
+    var signin_medium=document.getElementById('signin_medium');
+    if(window.addEventListener){
+        signin_medium.addEventListener('click',check_medium,false);
+    }
+    else{
+        signin_medium.attachEvent('onclick',check_medium);
+    }
+    
+    var closes=$('.close');
+    
+    closes.on('click',hideClose);
+    
+    
+    
+    function hideClose(e){
+        
+        e=window.event || e;
+        var obj=e.target?e.target:e.srcElement;
+        var $obj_j = $(obj);
+        
+        var $p=$($obj_j.parent()[0]);
+        $p.addClass('hidden');
+    }
+    
+    
+    function check_medium(e){
+        e= window.event || e;
+        var username=document.getElementById('stu_num');
+        var password=document.getElementById('password');
+        if(username.value==''){
+            var no_num=$('#login_check_n');
+            no_num.removeClass('hidden');
+        }
+        else if(password.value==''){
+            var no_pass=$('#login_check_p');
+            no_pass.removeClass('hidden');
+        }
+        else{
+            e.preventDefault();
+            if(window.event){
+                window.event.returnValue=false;
+            }
+            window.location.href='./victim_medium.php?'+'username='+username.value+'&password='+password.value;
+        }
+    }
+    
+</script>
+
+</body>
+
+</html>

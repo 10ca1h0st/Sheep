@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2018-04-24 13:39:33
+-- Generation Time: 2018-04-25 16:34:14
 -- 服务器版本： 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.28-0ubuntu0.16.04.1
 
@@ -19,9 +19,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `Sheep`
 --
+
 drop database if exists Sheep;
 create database Sheep;
 use Sheep;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `csrf`
+--
+
+CREATE TABLE `csrf` (
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `money` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `csrf`
+--
+
+INSERT INTO `csrf` (`username`, `password`, `money`) VALUES
+('victim', 'victim', 99966),
+('attacker', 'attacker', 100032);
 
 -- --------------------------------------------------------
 
