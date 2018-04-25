@@ -60,6 +60,11 @@
     echo "</table>";
     $result->free();
     $db->close();
+
+    if($num_result >1 ){
+        echo '<h1>sql injection success</h1>';
+        echo "<a href='../html/login_filt.html'>下一关</a>";
+    }
             
 ?>
 </body>

@@ -7,28 +7,26 @@
 <body>
 <h1>Your informations:<br /></h1>
 <?php
-    $username=$_POST['username'];
-    $password=$_POST['password'];
+    $username=$_GET['username'];
+    $password=$_GET['password'];
 
     if(!$username||!$password)
     {
         echo "You have not entered username or password. Please go back and enter both of them.";
         exit;
     }
-    if (preg_match("/^.*((union)|(select)|\')*.*$/",$username))
-    {
-        echo "Please enter correct Username!";
-        exit;
-    }
+
+    $username=addslashes($username);
+    $password=addslashes($password);
 
     $config = fopen("../../configure",'r');
     $config_username =  ltrim(rtrim(fgets($config)));
     $config_password = ltrim(rtrim(fgets($config)));
     $config_username = substr($config_username,strpos($config_username,':')+1);
     $config_password = substr($config_password,strpos($config_password,':')+1);
-                
+            
 
-                
+            
     @ $db=new mysqli('localhost',$config_username,$config_password,'Sheep');
 
 
@@ -66,7 +64,7 @@
 
     if($num_result >1 ){
         echo '<h1>sql injection success</h1>';
-        echo "<a href='../html/login_addsls.html'>下一关</a>";
+        echo "<a href='../html/login_impossible.html'>下一关</a>";
     }
 ?>
 </body>

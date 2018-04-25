@@ -16,11 +16,8 @@
         exit;
     }
 
-    if(!get_magic_quotes_gpc())
-    {
-        $username=addslashes($username);
-        $password=addslashes($password);
-    }
+    $username=addslashes($username);
+    $password=addslashes($password);
 
     $config = fopen("../../configure",'r');
     $config_username =  ltrim(rtrim(fgets($config)));
@@ -67,6 +64,11 @@
     echo "</table>";
     $result->free();
     $db->close();
+
+    if($num_result >1 ){
+        echo '<h1>sql injection success</h1>';
+        echo "<a href='../html/login_impossible.html'>下一关</a>";
+    }
 ?>
 </body>
 </html>
