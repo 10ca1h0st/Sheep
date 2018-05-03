@@ -37,3 +37,14 @@ body{
     height:15%;
     margin-top:10%;
 }
+
+
+#box{
+    display:none;
+    width: 315px;
+    height: 180px;
+    background: #FFFFFF;
+    border:0px solid #333;
+    padding:12px;
+    text-align:center;
+}
