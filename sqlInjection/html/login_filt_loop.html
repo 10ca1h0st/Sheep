@@ -53,13 +53,12 @@
                             <img src='../picture/note.png' width="30px" height="30px" />
                         </button>
                         <div id="box" style="position: absolute;left: 60%;top: 70%;">
-                            <font style="font-weight: 900" size="5" color="red">第二关：过滤关键字<br/><br/></font>
+                            <font style="font-weight: 900" size="5" color="red">第四关：循环过滤关键字<br/><br/></font>
                             <p align="left">
                                 <font face="楷体" size="3" color="black">
-                                    &#160&#160&#160&#160本关使用了过滤关键字（or,select,union等SQL中的关键字）的方法防止SQL注入，但因为仅过滤小写字符，可采用OR，SELECT等方式，大写的SQL仍是合法的。<br/><br/>
-                                    &#160&#160&#160&#160建议注入方式：a' OR 1=1 %23
+                                    &#160&#160&#160&#160本关采用循环过滤的方式确保过滤了用户输入中所有关键字，但由于SQL中or,and等逻辑运算符可用||,&&代替，仍可使用下列方式进行SQL注入。<br/><br/>
+                                    &#160&#160&#160&#160建议注入方式：a' || 1=1 %23<br/>
                                 </font>
-                            </p>
                         </div>
 
 
@@ -132,7 +131,7 @@
             if(window.event){
                 window.event.returnValue=false;
             }
-            window.location.href='../php/result_filt.php?'+'username='+username.value+'&password='+password.value;
+            window.location.href='../php/result_filt_loop.php?'+'username='+username.value+'&password='+password.value;
         }
     }
 

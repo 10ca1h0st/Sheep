@@ -46,6 +46,26 @@
                                 </div>
                                 <button type="button" class="btn btn-primary" id='signin'>登录</button>
                             </form>
+
+
+
+			    <button onclick="display()" onmouseout="disappear()" style="background-color:transparent;border:none;position: absolute;left: 50%;top: 70%;" >
+                                    <img src='../picture/note.png' width="30px" height="30px" />
+                            </button>
+                            <div id="box" style="position: absolute;left: 60%;top: 70%;">
+                                <font style="font-weight: 900" size="5" color="red">第一关：零防御</font>
+                                <p align="left">
+                                    <font face="楷体" size="3" color="black">
+                                        &#160&#160&#160&#160本关没有设置任何防御手段，你可以用任意方法注入SQL得到数据库中的用户信息。<br/><br/>
+                                        &#160&#160&#160&#160建议注入方式：a' or 1=1 %23<br/>
+                                        &#160&#160&#160&#160note:因为在URL中"#"有特殊意义，它将使HTTP请求中不包括"#"及其后面的内容，所以直接使用"#"将会使URL中的password失效，导致后端无法接收到password的内容而报错。因此应使用"%23"，"%23"经URL解码后在后端将被解析为"#"。
+                                    </font>
+                                </p>
+                            </div>
+
+
+
+
                         </div>
                         </div>
                         <div class='col-md-2 col-xs-2 col-sm-2'></div>
@@ -57,10 +77,20 @@
         </div>
     </div>
 
+
+
 <script src="../js/jquery.js"></script>
 <script src="../css/bootstrap/js/bootstrap.min.js"></script>
 <script>
-    
+
+    function display(e){
+        document.getElementById("box").style.display=(document.getElementById("box").style.display=="block"?"none":"block");
+    }
+
+    function disappear(){
+        document.getElementById("box").style.display="none";
+    }
+
     var signin=document.getElementById('signin');
     if(window.addEventListener){
         signin.addEventListener('click',check,false);
@@ -72,8 +102,8 @@
     var closes=$('.close');
     
     closes.on('click',hideClose);
-    
-    
+
+
     
     function hideClose(e){
         
@@ -84,8 +114,8 @@
         var $p=$($obj_j.parent()[0]);
         $p.addClass('hidden');
     }
-    
-    
+
+
     function check(e){
         e= window.event || e;
         var username=document.getElementById('stu_num');
