@@ -41,10 +41,12 @@ body{
 
 #box{
     display:none;
-    width: 315px;
-    height: 180px;
+    width: 450px;
+    height: 310px;
     background: #FFFFFF;
     border:0px solid #333;
     padding:12px;
     text-align:center;
 }
+
+
