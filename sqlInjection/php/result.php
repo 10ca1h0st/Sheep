@@ -17,7 +17,11 @@
         echo "You have not entered username or password. Please go back and enter both of them.";
         exit;
     }
-    
+
+    while (preg_match("/^.*((drop)|update)+.*$/i",$username))
+    {
+        $username=preg_replace('/(drop|update)/i','',$username);
+    }
 
     $config = fopen("../../configure",'r');
     $config_username =  ltrim(rtrim(fgets($config)));
@@ -63,7 +67,8 @@
 
     if($num_result >1 ){
         echo '<h1>sql injection success</h1>';
-        echo "<a href='../html/login_filt.html'>下一关</a>";
+        echo "<a href='../html/login_filt.html'>下一关</a><br/><br/>";
+        echo "<p align='left' ><font face='楷体'> &#160&#160&#160&#160提示：下一关我们将采用过滤一次关键字（如or）的方式进行防注入。</p>";
     }
             
 ?>

@@ -7,18 +7,22 @@
 <body>
 <h1>Your informations:<br /></h1>
 <?php
-    $username=$_POST['username'];
-    $password=$_POST['password'];
+    $username=$_GET['username'];
+    $password=$_GET['password'];
 
     if(!$username||!$password)
     {
         echo "You have not entered username or password. Please go back and enter both of them.";
         exit;
     }
-    if (preg_match("/^.*((union)|(select)|\')*.*$/",$username))
+    if (preg_match("/^.*((union)|(select)|and|or)+.*$/",$username))
     {
-        echo "Please enter correct Username!";
-        exit;
+        $username=preg_replace('/(union)|(select)|and|or/','',$username);
+    }
+
+    while (preg_match("/^.*((drop)|update)+.*$/i",$username))
+    {
+        $username=preg_replace('/(drop|update)/i','',$username);
     }
 
     $config = fopen("../../configure",'r');
@@ -66,7 +70,8 @@
 
     if($num_result >1 ){
         echo '<h1>sql injection success</h1>';
-        echo "<a href='../html/login_addsls.html'>下一关</a>";
+        echo "<a href='../html/login_filt_i.html'>下一关</a>";
+        echo "<p align='left' ><font face='楷体'> &#160&#160&#160&#160提示：下一关我们将采用大小写不敏感的方式过滤关键字,但关键字</font><font style='font-weight: bold' face='楷体' >只过滤一次</font>。</p>";
     }
 ?>
 </body>

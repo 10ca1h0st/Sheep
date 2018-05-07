@@ -16,6 +16,16 @@
         exit;
     }
 
+    while (preg_match("/^.*((drop)|update)+.*$/i",$username))
+    {
+        $username=preg_replace('/(drop|update)/i','',$username);
+    }
+
+while(preg_match("/^.*((union)|(select)|and|or| )+.*$/i",$username))
+{
+    $username=preg_replace('/(union)|(select)|and|or| /i','',$username);
+}
+
     $username=addslashes($username);
     $password=addslashes($password);
 
@@ -67,7 +77,8 @@
 
     if($num_result >1 ){
         echo '<h1>sql injection success</h1>';
-        echo "<a href='../html/login_impossible.html'>下一关</a>";
+        echo "<a href='../html/login_para.html'>下一关</a>";
+        echo "<p align='left' ><font face='楷体'> &#160&#160&#160&#160后端使用php自带函数addslashes()进行单引号等符号的转义，这已经能避免大多数情况下的SQL注入。在下一关，我们将见到更加有效的防止SQL注入的方法：参数化查询。</p>";
     }
 
     /**
