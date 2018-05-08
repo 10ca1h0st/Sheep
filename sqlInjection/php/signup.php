@@ -43,9 +43,8 @@
         }
 
 
-        $query2="INSERT INTO `user` (`username`, `password`, `realname`) VALUES ('".$username."','".$password."','".$realname."')";
-//        $query2="insert into user ('username','password','realname') VALUES ('".$username."','".$password."','".$realname."')";
-//        $db->query($query2);
+        $query2="INSERT INTO `user` (`username`, `password`) VALUES ('".$username."','".$password."')";
+
 
         echo $db->error;
         if (!$db->errno){

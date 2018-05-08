@@ -71,7 +71,7 @@ $db->close();
 if($num_result >1 ){
     echo '<h1>sql injection success</h1>';
     echo "<a href='../html/login_filt_loop.html'>下一关</a>";
-    echo "<p align='left' ><font face='楷体'> &#160&#160&#160&#160提示：下一关我们将采用循环过滤关键字的方式进行防注入（即过滤多次直到无法在用户输入中匹配到or,select等关键字，过滤使大小写不敏感的）。</p>";
+    echo "<p align='left' ><font face='楷体'> &#160&#160&#160&#160提示：下一关我们将采用循环过滤关键字的方式进行防注入（即过滤多次直到无法在用户输入中匹配到or,select等关键字，过滤是大小写不敏感的）。</p>";
 }
 ?>
 </body>
