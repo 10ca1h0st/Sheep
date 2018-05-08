@@ -6,7 +6,7 @@
     <body>
         <?php
             $guest = $_GET['guest'];
-            $hello = "echo 'hello , $guest';";
+            $hello = "echo 'hello , ".$guest."';";
             eval($hello);
         ?>
     </body>
