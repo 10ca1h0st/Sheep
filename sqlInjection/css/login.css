@@ -1,6 +1,5 @@
 body{
     background-image: url(../picture/login_background.jpg);
-    background-color:;
     overflow:hidden;
     background-size:cover;
     font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -14,7 +13,6 @@ body{
 }
 
 .form{
-    background-color:;
     position:relative;
     left:0;
     top:30%;
