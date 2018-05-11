@@ -1,6 +1,14 @@
 <?php
     $xmlStr = $_GET['xml'];
+    libxml_use_internal_errors(true);
     $xml = simplexml_load_string($xmlStr,"SimpleXMLElement",LIBXML_NOENT);
+    if ($xml === false) {
+        echo "Failed loading XML\n";
+        foreach(libxml_get_errors() as $error) {
+            echo "\t", $error->message;
+        }
+        echo '<br />';
+    }
     var_dump((array)$xml);
 
     /*

