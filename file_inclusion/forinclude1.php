@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<link href="./result.css" rel="stylesheet">
+<link href="./css/result.css" rel="stylesheet">
 <title>文件包含漏洞</title>
 </head>
 <body>
