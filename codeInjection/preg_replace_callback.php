@@ -1,9 +1,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="./css/result.css" rel="stylesheet">
         <title>代码执行(preg_replace_callback)</title>
     </head>
     <body>
+        <h1>preg_replace_callback函数造成的代码执行漏洞</h1>
         <?php
             $pattern = $_GET['pattern'];
             $callback = $_GET['callback'];

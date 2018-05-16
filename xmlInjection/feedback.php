@@ -1,3 +1,11 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="./css/result.css" rel="stylesheet">
+        <title>XXE(有回显)</title>
+    </head>
+    <body>
+        <h1>有回显的XXE漏洞</h1>
 <?php
     $xmlStr = $_GET['xml'];
     libxml_use_internal_errors(true);
@@ -19,3 +27,7 @@
     */
 
 ?>
+<br/><br/><br/>
+<a href="nofeedback.html">无回显的XXE漏洞</a>
+</body>
+</html>

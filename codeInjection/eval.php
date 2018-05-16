@@ -1,16 +1,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="./css/result.css" rel="stylesheet">
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <title>代码执行(eval)</title>
     </head>
-    <body>
+    <body class='text-center'>
+        <h1>eval函数造成的代码执行漏洞</h1> 
+        <br/>       
         <?php
             $guest = $_GET['guest'];
-            $hello = "echo 'hello , ".$guest."';";
+            $hello = "echo '<h3>hello , ".$guest."</h3>';";
             eval($hello);
 
             //执行代码的示例:
             //eval.php?guest=';system('ls');//&submit=submit
         ?>
+        <br/><br/>
+        <a href="preg_replace_callback.html">preg_replace_callback函数造成的代码执行漏洞</a>
     </body>
 </html>
