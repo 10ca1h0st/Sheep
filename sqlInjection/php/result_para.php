@@ -2,6 +2,7 @@
 <head>
     <title>Information</title>
     <meta charset="GBK"/>
+    <link href="../css/result.css" rel="stylesheet">
 </head>
 
 <body>
