@@ -1,2 +1,4 @@
 # Sheep
 vulnerability demonstration platform
+file_upload文件夹中的upload文件夹的权限为777
+file_inclusion文件夹中的upload文件夹的权限为777
