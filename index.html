@@ -11,6 +11,9 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- fontawesome core CSS -->
+    <link href="fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="index.css" rel="stylesheet">
   </head>
@@ -23,16 +26,16 @@
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">关于</h4>
-              <p class="text-muted">这是一个漏洞演示平台,该漏洞平台已经包括了代码注入、sql注入、文件包含漏洞、文件上传漏洞、csrf、xss、xml注入等常见的漏洞。</p>
+              <p class="text-muted">这是一个漏洞演示平台,该漏洞平台已经包括了常见并且重要的一些web安全方面的漏洞，比如，代码注入、sql注入、文件包含漏洞、文件上传漏洞、csrf、xss、xml注入等。</p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">联系我们</h4>
               <ul class="list-unstyled">
-                <li><a href="#" class="text-white navbar-brand"><img src="resources/qq.png">&nbsp;QQ</a></li>
+                <li><a href="#" class="text-white navbar-brand"><i class="fab fa-qq"></i>&nbsp;QQ</a></li>
                 <br/>
-                <li><a href="#" class="text-white navbar-brand"><img src="resources/wechat.png">&nbsp;Wechat</a></li>
+                <li><a href="#" class="text-white navbar-brand"><i class="fab fa-weixin"></i>&nbsp;Wechat</a></li>
                 <br/>
-                <li><a href="https://github.com/10ca1h0st/Sheep" class="text-white navbar-brand"><img src="resources/GitHub.png">&nbsp;Github</a></li>
+                <li><a href="https://github.com/10ca1h0st/Sheep" class="text-white navbar-brand"><i class="fab fa-github"></i>&nbsp;Github</a></li>
               </ul>
             </div>
           </div>
@@ -41,8 +44,7 @@
       <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
-            <img src="resources/hacker.png">
-            <strong>&nbsp;10ca1h0st</strong>
+            <i class="fas fa-user-secret"></i><strong>&nbsp;10ca1h0st</strong>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -56,7 +58,7 @@
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">JRWZ</h1>
-          <p class="lead text-muted">这是一个涵盖了许多常见的web漏洞的漏洞演示平台，本平台旨在让更多的信息安全爱好者更加快速地熟悉并掌握常见的web漏洞</p>
+          <p class="lead text-muted">这是一个涵盖了许多常见并且重要的web安全漏洞的漏洞演示平台，本平台旨在让更多的信息安全爱好者更加快速地熟悉并掌握常见的web安全漏洞。</p>
         </div>
       </section>
 
@@ -68,9 +70,10 @@
               <div class="card mb-4 box-shadow">
                 <embed class="card-img-top" src="resources/sqlInjection.svg" type="image/svg+xml" height="200px" />
                 <div class="card-body">
-                  <p class="card-text">SQL Injection</p>
+                  <p class="card-text">SQL injection</p>
                   <a href="#" class="btn btn-primary">基础教程</a>
                   <a href="sqlInjection/html/signup.html" class="btn btn-primary">实战演练</a>
+                  <a href="https://en.wikipedia.org/wiki/SQL_injection" class="btn btn-primary">维基百科</a>
                 </div>
               </div>
             </div>
@@ -78,9 +81,10 @@
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" src="resources/xss.jpg" height="200px">
                 <div class="card-body">
-                  <p class="card-text">XSS</p>
+                  <p class="card-text">Cross-site scripting</p>
                   <a href="#" class="btn btn-primary">基础教程</a>
-                  <a href="#" class="btn btn-primary">实战演练</a>
+                  <a href="xss/php/xss-1.php" class="btn btn-primary">实战演练</a>
+                  <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" class="btn btn-primary">维基百科</a>
                 </div>
               </div>
             </div>
@@ -88,9 +92,10 @@
               <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="resources/csrf.jpg" height="200px">
                     <div class="card-body">
-                      <p class="card-text">CSRF</p>
+                      <p class="card-text">Cross-site request forgery</p>
                       <a href="#" class="btn btn-primary">基础教程</a>
                       <a href="#" class="btn btn-primary">实战演练</a>
+                      <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" class="btn btn-primary">维基百科</a>
                     </div>
               </div>
             </div>
@@ -99,9 +104,10 @@
               <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="resources/fileupload.jpg" height="200px">
                     <div class="card-body">
-                      <p class="card-text">file upload</p>
+                      <p class="card-text">File upload vulnerability</p>
                       <a href="#" class="btn btn-primary">基础教程</a>
                       <a href="#" class="btn btn-primary">实战演练</a>
+                      <a href="https://en.wikipedia.org/wiki/Upload" class="btn btn-primary">维基百科</a>
                     </div>
               </div>
             </div>
@@ -109,9 +115,10 @@
               <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="resources/fileinclude.jpg" height="200px">
                     <div class="card-body">
-                      <p class="card-text">file include</p>
+                      <p class="card-text">File inclusion vulnerability</p>
                       <a href="#" class="btn btn-primary">基础教程</a>
                       <a href="#" class="btn btn-primary">实战演练</a>
+                      <a href="https://en.wikipedia.org/wiki/File_inclusion_vulnerability" class="btn btn-primary">维基百科</a>
                     </div>
               </div>
             </div>
@@ -119,9 +126,10 @@
               <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="resources/codeInjection.jpg" height="200px">
                     <div class="card-body">
-                      <p class="card-text">code Injection</p>
+                      <p class="card-text">Code injection</p>
                       <a href="#" class="btn btn-primary">基础教程</a>
                       <a href="#" class="btn btn-primary">实战演练</a>
+                      <a href="https://en.wikipedia.org/wiki/Code_injection" class="btn btn-primary">维基百科</a>
                     </div>
               </div>
             </div>
@@ -130,9 +138,10 @@
               <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="resources/xxe.jpg" height="200px">
                     <div class="card-body">
-                      <p class="card-text">xml Injection</p>
+                      <p class="card-text">XML external entity attack</p>
                       <a href="#" class="btn btn-primary">基础教程</a>
                       <a href="#" class="btn btn-primary">实战演练</a>
+                      <a href="https://en.wikipedia.org/wiki/XML_external_entity_attack" class="btn btn-primary">维基百科</a>
                     </div>
               </div>
             </div>
@@ -140,8 +149,8 @@
               <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="resources/websec.png" height="200px">
                     <div class="card-body">
-                      <p class="card-text">&nbsp;</p>
-                      <a href="lesson/top10.pdf" class="btn btn-primary" title="OWASP TOP10.pdf">了解更多</a>
+                      <p class="card-text">OWASP TOP10</p>
+                      <a href="lesson/top10.pdf" class="btn btn-primary">了解更多</a>
                     </div>
               </div>
             </div>
@@ -149,23 +158,43 @@
         </div>
       </div>
 
+      <div class="footer text-muted">
+          <div class="container">
+              <div class="thanks">
+                  <h4>友情链接</h4>
+                  <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <td><a href="https://www.owasp.org/index.php/Main_Page">OWASP&nbsp;<i class="fas fa-link"></i></a></td>
+                            <td><a href="https://www.freebuf.com">FreeBuf&nbsp;<i class="fas fa-link"></i></a></td>
+                            <td><a href="https://www.sec-wiki.com">Sec-Wiki&nbsp;<i class="fas fa-link"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://en.wikipedia.org/wiki/Main_Page">维基百科&nbsp;<i class="fas fa-link"></i></a></td>
+                            <td><a href="https://stackoverflow.com/">Stack Overflow&nbsp;<i class="fas fa-link"></i></a></td>
+                            <td><a href="https://www.ichunqiu.com/">i春秋&nbsp;<i class="fas fa-link"></i></a></td>
+                        </tr>
+                    </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+
     </main>
 
-    <footer class="text-muted">
+    <div class="copyright text-muted">
       <div class="container">
         <p class="float-right">
-          <a href="#">Back to top</a>
+          <a href="#">回到顶部</a>
         </p>
-        <p>Copyright@2008-2018.All rights Reserved. 10ca1h0st Group 版权所有</p>
+        <p>Copyright@2008-2018.&nbsp;&nbsp;All rights Reserved.&nbsp;&nbsp;10ca1h0st Group&nbsp;版权所有</p>
       </div>
-    </footer>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="jquery.js"></script>
-    <!--<script src="popper.min.js"></script>-->
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!--<script src="holder.min.js"></script>-->
   </body>
 </html>
