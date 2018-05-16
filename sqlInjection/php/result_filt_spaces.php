@@ -2,6 +2,7 @@
 <head>
     <title>Information</title>
     <meta charset="utf-8"/>
+    <link href="../css/result.css" rel="stylesheet">
 </head>
 
 <body>

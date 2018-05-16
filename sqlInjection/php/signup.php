@@ -2,38 +2,48 @@
     <head>
         <meta charset="UTF-8">
         <title>Sign Up</title>
+        <link href="../css/result.css" rel="stylesheet">
     </head>
 
     <body>
     <?php
         $username=$_GET['username'];
         $password=$_GET['password'];
-        $realname=$_GET['realname'];
 
         if(!get_magic_quotes_gpc()){
             $username=addslashes($username);
             $password=addslashes($password);
-            $realname=addslashes($realname);
         }
 
-        if (!$username||!$password||!$realname){
+        if (!$username||!$password){
             echo "You have not entered username,password or realname.Please go back and try again.";
             exit();
         }
 
-    if (preg_match("/^.*((union)|(select)|\'|\-|#|insert|update|delete)+.*$/",$username)){
-            echo "Please don't use quotes,'union','select','insert','update' or 'delete' as your username!";
-            exit();
-    }
+        $username = addslashes($username);
+        $password = addslashes($password);
 
-        @ $db=new mysqli('localhost','root','971018','users');
+        if (preg_match("/^.*((union)|(select)|\'|\-|#|insert|update|delete)+.*$/",$username)){
+                echo "Please don't use quotes,'union','select','insert','update' or 'delete' as your username!";
+                exit();
+        }
+
+        $config = fopen("../../configure",'r');
+        $config_username =  ltrim(rtrim(fgets($config)));
+        $config_password = ltrim(rtrim(fgets($config)));
+        $config_username = substr($config_username,strpos($config_username,':')+1);
+        $config_password = substr($config_password,strpos($config_password,':')+1);
+        
+
+        
+        @ $db=new mysqli('localhost',$config_username,$config_password,'Sheep');
         $db->query("set names 'utf8'");
         if (mysqli_connect_errno()){
             echo "Error:database connect failed,please try again later.";
             exit();
         }
 
-        $query1="select * from user where username='".$username."'";
+        $query1="select * from users where username='".$username."'";
         $result=$db->query($query1);
         $num_results=$result->num_rows;
 
@@ -43,12 +53,13 @@
         }
 
 
-        $query2="INSERT INTO `user` (`username`, `password`) VALUES ('".$username."','".$password."')";
+        $query2="INSERT INTO `users` (`username`, `password`) VALUES ('".$username."','".$password."')";
 
+        $result = $db->query($query2);
 
-        echo $db->error;
         if (!$db->errno){
-            echo "Registration successful!";
+            echo '<h1>注册用户成功！</h1>';
+            echo "<a href='../html/login.html'>开始sql注入的实战吧！</a><br/><br/>";
         }
         else{
             echo "Error:Register failed,please try again.";

@@ -41,8 +41,8 @@ CREATE TABLE `csrf` (
 --
 
 INSERT INTO `csrf` (`username`, `password`, `money`) VALUES
-('victim', 'victim', 99966),
-('attacker', 'attacker', 100032);
+('victim', 'victim', 10000),
+('attacker', 'attacker', 10000);
 
 -- --------------------------------------------------------
 
