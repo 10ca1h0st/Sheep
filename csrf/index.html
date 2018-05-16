@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>演示介绍</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="index.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">CSRF漏洞演练须知</h1>
+        <br />
+        <p class="lead">CSRF，是一种对网站的恶意利用。尽管听起来像XSS，但它与XSS非常不同，XSS利用站点内的信任用户，而CSRF则通过伪装来自受信任用户的请求来利用受信任的网站。</p>
+        <br />
+        <p class="lead">
+            本平台演练CSRF漏洞的假设背景是网站中的转账功能，现有用户victim，密码为victim，用户attacker，密码为attacker，
+            在Sheep数据库中的csrf表中，记录着他们账户中的钱。最初，他们的账户中都有1000,可以通过CSRF攻击让victim用户不知不觉之间向attacker用户转账。
+        </p>
+        <p class="lead">
+          <a href="login.html" class="btn btn-lg btn-primary">开始实战</a>
+          <a href="answer.html" class="btn btn-lg btn-primary">帮助</a>
+        </p>
+      </main>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

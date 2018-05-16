@@ -1,6 +1,12 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link href="./css/result.css" rel="stylesheet">
+<title>验证Cookie的CSRF</title>
+</head>
+<body>
+<h1>验证Cookie的CSRF</h1>
 <?php
-
-    echo '<h1>CSRF MEDIUM</h1>';
 
     @ $username = addslashes($_GET['username']);
     @ $password = addslashes($_GET['password']);
@@ -29,14 +35,10 @@
     session_start();
 
 ?>
-
-<html>
-    <head><title>Victim</title></head>
-    <body>
-        <form action="pay_medium.php" method="post">
-            <p>to:<input type="text" name="to" size="40" /></p>
-            <p>money:<input type="text" name="money" size="40" /></p>
-            <input type="submit" name="pay" value="pay" />
-        </form>
-    </body>
+<form action="pay_medium.php" method="post">
+    <p>转账对象:<input type="text" name="to" size="40" /></p>
+    <p>转账金额:<input type="text" name="money" size="40" /></p>
+    <input type="submit" name="pay" value="转账" />
+</form>
+</body>
 </html>

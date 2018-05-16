@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSRF漏洞演练详解</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="index.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">CSRF漏洞演练详解</h1>
+        <br />
+        <p class="lead">
+            不验证Cookie的CSRF
+        </p>
+        <p class="lead">
+            因为服务器在接收到用户转账的请求时并不验证用户的Cookie，所以只要构造一个恶意的网址，让用户访问它就可以。
+            例如，可以在一个网页中放置一个img标签，其src属性类似于"pay.php?to=attacker&money=1&pay=pay"这种形式，就可以实现CSRF攻击。
+        </p>
+        <br /><br /><br />
+        <p class="lead">
+            验证Cookie的CSRF
+        </p>
+        <p class="lead">
+            服务器在接收到用户转账的请求时需要验证用户的Cookie，但是浏览器在发送请求时，会自动带上Cookie，所以只要让用户在不知不觉间发送请求即可。
+            例如，可以在一个html文件里嵌入一个隐藏的表单并用js自动提交表单，如下：
+            <br/>
+            <img src="picture/help.png" />
+        </p>
+      </main>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

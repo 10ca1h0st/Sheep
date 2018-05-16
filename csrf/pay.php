@@ -1,8 +1,4 @@
 <?php
-    if(!isset($_COOKIE['PHPSESSID'])){
-        die('pay fail');
-    }
-    
     
     $to = $_GET['to'] or die('');
     $from = $to==='attacker'?'victim':'attacker';
