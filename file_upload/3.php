@@ -24,7 +24,7 @@ move_uploaded_file($tmp_name,$des_addr);
 if ($error == 0 ){
         echo "上传成功。"."<br />";
 }
-echo ("<img src = $des_addr width='500' height='300'  /> ");
+echo ("<img src = $des_addr /> ");
 ?>
 </body>
 </html>

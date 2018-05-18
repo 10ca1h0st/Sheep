@@ -10,14 +10,7 @@
 		选择上传文件：<input type = "file" name = "file"></br>
 		<input type = "submit" name = "上传" value = "上传">
 	</form>
-	<h5>文件头简介</h5>
-	<p6>不同的图片文件都有不同文件头，如：<br>PNG： 文件头标识 (8 bytes) 89 50 4E 47 0D 0A 1A 0A<br>JPEG： 文件头标识 (2 bytes): 0xff， 0xd8 (SOI) (JPEG 文件标识)<br>GIF： 文件头标识 (6 bytes) 47 49 46 38 39(37) 61<br>PHP 使用 getimagesize 函数验证图片文件头<br>
-	</p6>
-	<!--
-	<h5>绕过方式</h5>
-	<p>只需要在恶意脚本前加上允许上传文件的头标识</p>
-	<h6>测试文件为：test3.php（向某图片添加注释<?php phpinfo(); ?>,保存图片后将其扩展名改为php)<br>上传成功后访问该文件。</h6>
-	-->
+	
 
 	<br/><br/>
 	<a href="4.html">下一关:文件上传测试（服务端文件扩展名检测）</a>
