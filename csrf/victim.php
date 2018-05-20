@@ -29,7 +29,7 @@
     $result=$db->query($query);
     $num_result=$result->num_rows;
     if($num_result != 1){
-        die('login failed');
+        die('<h2>login failed</h2>');
     }
 ?>
 <form action="pay.php" method="get">

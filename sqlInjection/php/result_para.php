@@ -3,10 +3,12 @@
     <title>Information</title>
     <meta charset="GBK"/>
     <link href="../css/result.css" rel="stylesheet">
+    <link href="../../fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
 </head>
 
 <body>
 <h1>Your informations:<br /></h1>
+<div style='text-align:center;'>
 <?php
 $username=$_GET['username'];
 $password=$_GET['password'];
@@ -70,27 +72,16 @@ for ($i=0;$i<$num_result;$i++){
 }
 
 echo "</table>";
+echo '</div>';
 $stmt->close();
 $result->free();
 $db->close();
 
-if ($num_result>1) {
-    echo "
-            <button id=\"btn\">
-        Congratulations!You have succeed!
-    </button>";
-}
+
 ?>
 
-<p><font size="5" color="black" face="楷体"> &#160&#160&#160&#160在后端代码中使用mysqli类的prepare()方法和bind_param()方法完成了参数化查询的功能。参数化查询用户输入的所有字符视为SQL的参数，而在前面几关中用户输入的内容被直接拼接在了后端的SQL查询语句中，因而出现SQL注入漏洞。<br/>
+<p><font size="5" face="楷体"> &#160&#160&#160&#160在后端代码中使用mysqli类的prepare()方法和bind_param()方法完成了参数化查询的功能。参数化查询用户输入的所有字符视为SQL的参数，而在前面几关中用户输入的内容被直接拼接在了后端的SQL查询语句中，因而出现SQL注入漏洞。<br/>
     例如用户输入内容为："';drop all;"在不进行一些特定的过滤情况下该语句将被直接拼接在SQL语句后面。若采用参数化查询的方法，该内容将被视为SQL的参数传给后端，此时后端构建的SQL语句可能为："selece * from dbname where username="';drop all;"（数据库将在表dbname中查找username为"'drop all;"的元素。</font></p>
 
-<script>
-    function event() {
-        window.location.href='test.php';
-    }
-
-    btn.addEventListener("click",event)
-</script>
 </body>
 </html>

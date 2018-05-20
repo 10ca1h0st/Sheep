@@ -5,6 +5,7 @@
 <title>服务端检测文件头的文件上传漏洞</title>
 </head>
 <body>
+<h1>文件上传测试（服务端检测文件头) </h1>
 <?php
 //var_dump($_FILES['file']);
 //echo "<br />";
@@ -22,9 +23,13 @@ $des_addr = "./upload/".$filename;
 //copy($tmp_name,$des_addr);
 move_uploaded_file($tmp_name,$des_addr);
 if ($error == 0 ){
-        echo "上传成功。"."<br />";
+		echo "<h2>上传成功</h2>";
+		echo "<img src = $des_addr alt='图片无法显示'/> ";
 }
-echo ("<img src = $des_addr /> ");
+else{
+	echo "<h2>上传失败</h2>";
+}
+
 ?>
 </body>
 </html>

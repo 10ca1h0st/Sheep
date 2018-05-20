@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <title>Sign Up</title>
         <link href="../css/result.css" rel="stylesheet">
+        <link href="../../fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
     </head>
 
     <body>
@@ -59,7 +60,7 @@
 
         if (!$db->errno){
             echo '<h1>注册用户成功！</h1>';
-            echo "<a href='../html/login.html'>开始sql注入的实战吧！</a><br/><br/>";
+            echo "<a href='../html/login.html' style='color:yellow;'>开始sql注入的实战吧!&#160<i class='fas fa-arrow-right'></i></a><br/><br/>";
         }
         else{
             echo "Error:Register failed,please try again.";

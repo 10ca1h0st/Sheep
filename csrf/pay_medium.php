@@ -1,6 +1,14 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link href="./css/result.css" rel="stylesheet">
+<title>验证Cookie的CSRF</title>
+</head>
+<body>
+<h1>验证Cookie的CSRF</h1>
 <?php
     if(!isset($_COOKIE['PHPSESSID'])){
-        die('pay fail');
+        die('<h2>CSRF攻击失败</h2>');
     }
     
     
@@ -30,8 +38,10 @@
     $db->close();
 
     if(strpos($_SERVER['HTTP_REFERER'],'/Sheep/practice/csrf/victim_medium.php') === false){
-        echo 'victim has attacked by csrf (medium)';
+        echo '<h2>恭喜! 攻击者成功地通过CSRF攻击攻击了受害者。:):):)</h2>';
     }
 
 
 ?>
+</body>
+</html>

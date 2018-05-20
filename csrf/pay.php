@@ -1,3 +1,11 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link href="./css/result.css" rel="stylesheet">
+<title>不验证Cookie的CSRF</title>
+</head>
+<body>
+<h1>不验证Cookie的CSRF</h1>
 <?php
     
     $to = $_GET['to'] or die('');
@@ -26,7 +34,7 @@
     $db->close();
 
     if(strpos($_SERVER['HTTP_REFERER'],'/Sheep/practice/csrf/victim.php') === false){
-        echo 'victim has attacked by csrf';
+        echo '<h2>恭喜! 攻击者成功地通过CSRF攻击攻击了受害者。:):):)</h2>';
     }
 
     /**
@@ -36,3 +44,5 @@
 
 
 ?>
+</body>
+</html>

@@ -3,10 +3,12 @@
     <title>Information</title>
     <meta charset="utf-8"/>
     <link href="../css/result.css" rel="stylesheet">
+    <link href="../../fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
 </head>
 
 <body>
 <h1>Your informations:<br /></h1>
+<div style='text-align:center;'>
 <?php
 $username=$_GET['username'];
 $password=$_GET['password'];
@@ -66,13 +68,27 @@ for ($i=0;$i<$num_result;$i++){
 }
 
 echo "</table>";
+echo '</div>';
 $result->free();
+
+$uapar = false;
+$query2 = "select * from users where username='".$username."'";
+$result2 = $db->query($query2);
+$num_result2 = $result2->num_rows;
+if($num_result2 > 0){
+    $result_info2 = $result2->fetch_assoc();
+    $password_right = $result_info2['password'];
+    if($password_right !== $password){
+        $uapar = true;
+    }
+}
+
 $db->close();
 
-if($num_result >1 ){
+if($num_result >1 or $uapar){
     echo '<h1>sql injection success</h1>';
-    echo "<a href='../html/login_filt_spaces.html'>下一关</a>";
-    echo "<p align='left' ><font face='楷体'> &#160&#160&#160&#160提示：下一关我们将采用过滤空格的方式进行防注入。</p>";
+    echo "<a href='../html/login_filt_spaces.html' style='color:yellow;'>下一关&#160<i class='fas fa-arrow-right'></i></a>";
+    echo "<p><font face='楷体'> &#160&#160&#160&#160提示：下一关我们将采用过滤空格的方式进行防注入。</p>";
 }
 ?>
 </body>
