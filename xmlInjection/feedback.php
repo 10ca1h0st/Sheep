@@ -2,6 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="./css/result.css" rel="stylesheet">
+        <link href="../fontawesome/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
         <title>XXE(有回显)</title>
     </head>
     <body>
@@ -28,6 +29,6 @@
 
 ?>
 <br/><br/><br/>
-<a href="nofeedback.html">无回显的XXE漏洞</a>
+<a href="nofeedback.html" style='color:green;'>无回显的XXE漏洞&#160<i class='fas fa-arrow-right'></i></a>
 </body>
 </html>

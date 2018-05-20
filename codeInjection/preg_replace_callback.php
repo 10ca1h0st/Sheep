@@ -12,7 +12,8 @@
             $subject = $_GET['subject'];
             //$callback = "echo 'should return<br />';return 'callback';";
             eval("function func(){".$callback."}");
-            echo preg_replace_callback("/".$pattern."/",func,$subject);
+            echo "<h2>替换结果:</h2>";
+            echo "<h2>".preg_replace_callback("/".$pattern."/",func,$subject)."</h2>";
 
             //执行代码的示例
             //preg_replace_callback.php?pattern=lambda&callback=return+system('ls');&subject=hhh,lambda,jjj&submit=submit
