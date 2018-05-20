@@ -12,9 +12,12 @@
 <h4>把我们输入的字符串 输出到input里的value属性里</h4>
 <form action="" method="get">
 <h4>请输入你想显示的字符串</h4>
-<input type="text" name="xss_input_value" placeholder="输入"><br>
+<p><input type="text" name="xss_input_value" placeholder="输入"></p>
 <input type="submit" value="显示">
 </form>
+<button onclick="help()" style="background-color:transparent;border:none;">
+    <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
+</button>
 <hr>
 <?php
 $xss = $_GET['xss_input_value'];
@@ -57,5 +60,12 @@ echo "<!--绕过方法:\"><script>alert('xss');</script>-->";
     </tr>
 </table>
 </div>
+<script>
+
+    function help(){
+        alert('绕过方法:\"><script>alert("xss");</script'+'>');
+    }
+
+</script>
 </body>
 </html>

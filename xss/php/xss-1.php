@@ -11,7 +11,11 @@
 <input type="text" name="xss_input" placeholder="这里填写的内容会在下面显示">
 <input type="submit" value="显示">
 </form>
-<hr>
+<button onclick="help()" style="background-color:transparent;border:none;">
+    <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
+</button>
+<hr />
+
 <?php
 $xss = $_GET['xss_input'];
 echo '你所输入的内容为:'.($xss?$xss:"你所输入的内容");
@@ -49,7 +53,13 @@ echo "<!--绕过方法:<script>alert('xss')</script>-->";
 </table>
 </div>
 
+<script>
 
+    function help(){
+        alert("绕过方法:<script>alert('xss');</script"+">");
+    }
+
+</script>
 
 </body>
 </html>

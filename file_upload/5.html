@@ -32,6 +32,9 @@
     <p>请选择要上传的文件：<input type="file" name="upfile"/></p>
     <input type="submit" name="submit" value="上传"/>&#160<i class='fas fa-upload'></i>
 </form>
+<button onclick="help()" style="background-color:transparent;border:none;">
+	<i class='far fa-question-circle' style='font-size:15px;color:red;'></i><span style='color:red;'>帮助</span>
+</button>
 <br/><br/>
 <div style='text-align:center;'>
     <table style='text-align:left;'>
@@ -53,6 +56,13 @@
         </tr>
     </table>
 </div>
+<script>
+
+    function help(){
+        alert("绕过方法:方法1:通过firefox的F12修改js代码绕过验证   方法2:使用burp抓包直接提交,绕过js验证");
+    }
+				
+</script>
 </body>
 </html>
 

@@ -11,6 +11,9 @@
 		<p>选择上传文件：<input type = "file" name = "file"></p>
 		<input type = "submit" name = "上传" value = "上传">&#160<i class='fas fa-upload'></i>
 	</form>
+	<button onclick="help()" style="background-color:transparent;border:none;">
+		<i class='far fa-question-circle' style='font-size:15px;color:red;'></i><span style='color:red;'>帮助</span>
+	</button>
 
 	<br/><br/>
 	<div style='text-align:center;'>
@@ -33,5 +36,12 @@
 			</tr>
 		</table>
 	</div>
+	<script>
+
+		function help(){
+			alert("绕过方法:可以通过抓包工具抓包,将content-type字段改为允许上传的类型");
+		}
+		
+	</script>
 	</body>
 </html>

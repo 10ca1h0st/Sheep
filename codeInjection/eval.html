@@ -2,6 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="./css/result.css" rel="stylesheet">
+        <link href="../fontawesome/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
         <title>代码执行(eval)</title>
     </head>
     <body>
@@ -12,5 +13,15 @@
             <input type='text' name='guest' />
             <input type="submit" value="向他打招呼" name="submit">
         </form>
+        <button onclick="help()" style="background-color:transparent;border:none;">
+            <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
+        </button>
+        <script>
+
+            function help(){
+                alert("绕过方法:';system('ls');//");
+            }
+                
+        </script>
     </body>
 </html>

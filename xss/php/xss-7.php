@@ -11,6 +11,9 @@
 <input type="text" name="xss_input" placeholder="想要显示的图片(比如:xss.jpg)"/>
 <input type="submit"  value="显示"/>
 </form>
+<button onclick="help()" style="background-color:transparent;border:none;">
+    <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
+</button>
 <hr/>
 <?php
 $img = $_GET["xss_input"];
@@ -53,5 +56,12 @@ echo "<!--绕过方法:no.jpg' onerror='alert(\"xss\");-->";
     </tr>
 </table>
 </div>
+<script>
+
+    function help(){
+        alert("绕过方法:no.jpg' onerror='alert(\"xss\");");
+    }
+
+</script>
 </body>
 </html>

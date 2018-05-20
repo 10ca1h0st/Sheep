@@ -11,6 +11,9 @@
 <input type="text" name="xss_input" placeholder="这里填写的内容会在下面显示">
 <input type="submit" value="显示">
 </form>
+<button onclick="help()" style="background-color:transparent;border:none;">
+    <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
+</button>
 <hr>
 <?php
 //循环替换<script>标签,但大小写敏感
@@ -59,6 +62,13 @@ echo "<!--绕过方法:<scRipt>alert('xss');</scRipt>-->";
     </tr>
 </table>
 </div>
+<script>
+
+    function help(){
+        alert("绕过方法:<scRipt>alert('xss');</scRipt"+">");
+    }
+
+</script>
 </body>
 </html>
 

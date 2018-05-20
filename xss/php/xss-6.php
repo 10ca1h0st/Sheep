@@ -15,6 +15,9 @@
 <input type="text" name="xss_input_value" placeholder="输入"><br>
 <input type="submit" value="显示">
 </form>
+<button onclick="help()" style="background-color:transparent;border:none;">
+    <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
+</button>
 <hr>
 <?php
 $xss = $_GET['xss_input_value'];
@@ -25,7 +28,6 @@ function xss_filter($xss) {
 
 if(isset($xss)){
 	$xss=xss_filter($xss);
-	echo $xss;
 	echo "<input type='text' value='".$xss."'>";
 }else{
 	echo '<input type="type" placeholder="输出">';
@@ -64,5 +66,12 @@ echo "<!--绕过方法:show' onmouseover='alert(\"xss\");   因为htmlspecialcha
     </tr>
 </table>
 </div>
+<script>
+
+    function help(){
+        alert("绕过方法:show'"+" onmouseover='alert(\"xss\");");
+    }
+
+</script>
 </body>
 </html>

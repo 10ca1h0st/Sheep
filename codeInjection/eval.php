@@ -14,7 +14,7 @@
             eval($hello);
 
             //执行代码的示例:
-            //eval.php?guest=';system('ls');//&submit=submit
+            //eval.php?guest=';system('ls');//&submit=向他打招呼
         ?>
         <br/><br/>
         <a href="preg_replace_callback.html" style='color:yellow;'>preg_replace_callback函数造成的代码执行漏洞&#160<i class='fas fa-arrow-right'></i></a>

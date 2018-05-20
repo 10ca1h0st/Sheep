@@ -2,6 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="./css/result.css" rel="stylesheet">
+        <link href="../fontawesome/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
         <title>XXE(无回显)</title>
     </head>
     <body>
@@ -11,6 +12,9 @@
             <textarea name='xml'></textarea>
             <input type="submit" value="解析" name="submit">
         </form>
+        <button onclick="help()" style="background-color:transparent;border:none;">
+            <i class='far fa-question-circle' style='font-size:15px;color:green;'></i><span style='color:green;'>帮助</span>
+        </button>
         <!--
             绕过方法：
 
@@ -43,5 +47,12 @@
                 %send;
             ]>
         -->
+        <script>
+
+            function help(){
+                alert("因为绕过方法太复杂，请查看html源代码中的注释了解绕过方法");
+            }
+                    
+        </script>
     </body>
 </html>

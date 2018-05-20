@@ -2,6 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="./css/result.css" rel="stylesheet">
+        <link href="../fontawesome/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
         <title>代码执行(preg_replace_callback)</title>
     </head>
     <body>
@@ -16,5 +17,15 @@
             <input type='text' name='subject' placeholder="hhh,pattern,jjj"/>
             <input type="submit" value="submit" name="submit">
         </form>
+        <button onclick="help()" style="background-color:transparent;border:none;">
+            <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
+        </button>
+        <script>
+
+            function help(){
+                alert("绕过方法:第一个框填lambda 第二个框填return system('ls'); 第三个框填hhh,lambda,jjj");
+            }
+                    
+        </script>
     </body>
 </html>

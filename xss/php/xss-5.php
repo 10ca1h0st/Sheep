@@ -11,6 +11,9 @@
 <input type="text" name="xss_input" placeholder="这里填写的内容会在下面显示">
 <input type="submit" value="显示">
 </form>
+<button onclick="help()" style="background-color:transparent;border:none;">
+    <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
+</button>
 <hr>
 <?php
 //转义过滤引号
@@ -58,6 +61,13 @@ echo "<!--绕过方法:<scr<script>ipt>alert(String.fromCharCode(88,83,83));</s<
     </tr>
 </table>
 </div>
+<script>
+
+    function help(){
+        alert("绕过方法:<scr<script>ipt>alert(String.fromCharCode(88,83,83));</s</script"+">cript>");
+    }
+
+</script>
 </body>
 
 </html>
