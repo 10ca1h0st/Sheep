@@ -6,6 +6,7 @@
 <title>XSS-1</title>
 </head>
 <body>
+<br /><br /><br /><br /><br />
 <h1>最基本的XSS</h1>
 <form action="xss-1.php" method="get">
 <input type="text" name="xss_input" placeholder="这里填写的内容会在下面显示">
@@ -14,7 +15,7 @@
 <button onclick="help()" style="background-color:transparent;border:none;">
     <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
 </button>
-<hr />
+<br /><br />
 
 <?php
 $xss = $_GET['xss_input'];
@@ -22,9 +23,8 @@ echo '你所输入的内容为:'.($xss?$xss:"你所输入的内容");
 
 echo "<!--绕过方法:<script>alert('xss')</script>-->";
 ?>
-<br/><br/><br/>
-<div style='text-align:center;'>
-<table style='text-align:left;'>
+<div style='position: absolute;top:100px;'>
+<table style='text-align:left;' cellspacing="20">
     <tr><th>关卡列表:</th></tr>
     <tr>
         <td><a href="xss-1.php" style='color:yellow;'>最基本的XSS&#160<i class='fas fa-arrow-right'></i></a></td>

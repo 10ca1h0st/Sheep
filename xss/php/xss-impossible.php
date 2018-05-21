@@ -6,12 +6,13 @@
 <title>XSS-Impossible</title>
 </head>
 <body>
+<br /><br /><br /><br /><br />
 <h1>无法绕过产生XSS</h1>
 <form action="xss-impossible" method="get">
 <input type="text" name="xss_input" placeholder="这里填写的内容会在下面显示">
 <input type="submit" value="显示">
 </form>
-<hr>
+<br /><br />
 <?php
 //impossible
 function xss_filter($xss) {
@@ -36,8 +37,8 @@ $xss=xss_filter($xss);
 echo '你所输入的内容为:'.($xss?$xss:"你所输入的内容");
 
 ?>
-<div style='text-align:center;'>
-<table style='text-align:left;'>
+<div style='position: absolute;top:100px;'>
+<table style='text-align:left;' cellspacing="20">
     <tr><th>关卡列表:</th></tr>
     <tr>
         <td><a href="xss-1.php" style='color:yellow;'>最基本的XSS&#160<i class='fas fa-arrow-right'></i></a></td>

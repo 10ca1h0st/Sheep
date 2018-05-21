@@ -6,6 +6,7 @@
 <title>XSS-7</title>
 </head>
 <body>
+<br /><br /><br /><br /><br />
 <h1>使用img标签的onerror属性实现XSS</h1>
 <form action="" method="get" >
 <input type="text" name="xss_input" placeholder="想要显示的图片(比如:xss.jpg)"/>
@@ -14,7 +15,7 @@
 <button onclick="help()" style="background-color:transparent;border:none;">
     <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
 </button>
-<hr/>
+<br /><br />
 <?php
 $img = $_GET["xss_input"];
 if(isset($img)){
@@ -26,9 +27,8 @@ else{
 
 echo "<!--绕过方法:no.jpg' onerror='alert(\"xss\");-->";
 ?>
-<br/><br/><br/>
-<div style='text-align:center;'>
-<table style='text-align:left;'>
+<div style='position: absolute;top:100px;'>
+<table style='text-align:left;' cellspacing="20">
     <tr><th>关卡列表:</th></tr>
     <tr>
         <td><a href="xss-1.php" style='color:yellow;'>最基本的XSS&#160<i class='fas fa-arrow-right'></i></a></td>

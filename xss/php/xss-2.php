@@ -6,7 +6,7 @@
 <title>XSS-2</title>
 </head>
 <body>
-<center>
+<br /><br /><br /><br /><br />
 <h1>闭合标签的XSS</h1>
 <br />
 <h4>把我们输入的字符串 输出到input里的value属性里</h4>
@@ -18,7 +18,7 @@
 <button onclick="help()" style="background-color:transparent;border:none;">
     <i class='far fa-question-circle' style='font-size:15px;color:white;'></i><span style='color:white;'>帮助</span>
 </button>
-<hr>
+<br /><br />
 <?php
 $xss = $_GET['xss_input_value'];
 if(isset($xss)){
@@ -29,10 +29,9 @@ echo '<input type="type" placeholder="输出">';
 
 echo "<!--绕过方法:\"><script>alert('xss');</script>-->";
 ?>
-</center>
-<br/><br/><br/>
-<div style='text-align:center;'>
-<table style='text-align:left;'>
+
+<div style='position: absolute;top:100px;'>
+<table style='text-align:left;' cellspacing="20">
     <tr><th>关卡列表:</th></tr>
     <tr>
         <td><a href="xss-1.php" style='color:yellow;'>最基本的XSS&#160<i class='fas fa-arrow-right'></i></a></td>
