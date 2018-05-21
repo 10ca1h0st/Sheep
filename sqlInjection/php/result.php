@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<a href='../../index.html' style='position:absolute;top:20px;left:20px;'><i class='fas fa-home' style='font-size:20px;'></i>Home</a>
 <h1>Your informations:<br /></h1>
 <div style='text-align:center;'>
 <?php
