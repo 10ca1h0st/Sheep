@@ -6,11 +6,13 @@
 
 <link href="../sqlInjection/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="../sqlInjection/css/login.css" rel="stylesheet">
+<link href="../fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
 
 <title>登录</title>
 </head>
 
 <body>
+    <a href='../index.html' style='position:absolute;top:20px;left:20px;text-decoration:none;color:white;'><i class='fas fa-home' style='font-size:20px;'></i>&#160Home</a>
     <div class='container-fluid' style='height:100%;'>
         <div class='row' style='height:100%;'>
             <div class='col-md-3 col-xs-3 col-sm-3'></div>
@@ -44,9 +46,11 @@
                                         <em>请输入密码</em>
                                     </div>
                                 </div>
+                                <nobr>
                                 <button type="button" class="btn btn-primary" id='signin'>登录(不验证Cookie的CSRF)</button>
                                 
                                 <button type="button" class="btn btn-primary" id='signin_medium'>登录(验证Cookie的CSRF)</button>
+                                </nobr>                            
                             </form>
                         </div>
                         </div>

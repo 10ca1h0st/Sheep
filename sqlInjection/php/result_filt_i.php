@@ -3,11 +3,11 @@
     <title>Information</title>
     <meta charset="utf-8"/>
     <link href="../css/result.css" rel="stylesheet">
-    <link href="../../fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../../fontawesome/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
 </head>
 
 <body>
-<a href='../../index.html' style='position:absolute;top:20px;left:20px;'><i class='fas fa-home' style='font-size:20px;'></i>Home</a>
+<a href='../../index.html' style='position:absolute;top:20px;left:20px;text-decoration:none;color:white;'><i class='fas fa-home' style='font-size:20px;'></i>&#160Home</a>
 <h1>Your informations:<br /></h1>
 <div style='text-align:center;'>
 <?php

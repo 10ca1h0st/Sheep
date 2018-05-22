@@ -2,9 +2,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <link href="./css/result.css" rel="stylesheet">
+<link href="../fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
 <title>验证Cookie的CSRF</title>
 </head>
 <body>
+<a href='../index.html' style='position:absolute;top:20px;left:20px;text-decoration:none;color:white;'><i class='fas fa-home' style='font-size:20px;'></i>&#160Home</a>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 <h1>验证Cookie的CSRF</h1>
 <?php
     if(!isset($_COOKIE['PHPSESSID'])){

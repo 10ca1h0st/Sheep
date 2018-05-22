@@ -6,6 +6,8 @@
 <title>开始实战</title>
 </head>
 <body>
+<a href='../index.html' style='position:absolute;top:20px;left:20px;text-decoration:none;color:white;'><i class='fas fa-home' style='font-size:20px;'></i>&#160Home</a>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 <?php
 //var_dump($_FILES['file']);
 echo "<br />";
@@ -16,7 +18,7 @@ $error = $_FILES['file']['error'];
 $des_addr = "./upload/".$filename;
 //copy($tmp_name,$des_addr);
 move_uploaded_file($tmp_name,$des_addr);
-if (error == 0 ){
+if ($error == 0 ){
 	echo "<h2>上传成功</h2>";
 	echo "<p>文件路径如下:<br/><p><strong>$des_addr</strong></p>";
 	echo "
@@ -28,6 +30,7 @@ if (error == 0 ){
 }
 else{
 	echo "<h2>上传失败</h2>";
+	echo "<a href='index.html'><i class='fas fa-undo'></i>&#160重新上传</a>";
 }
 
 ?>

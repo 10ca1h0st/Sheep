@@ -6,6 +6,8 @@
         <title>XXE(有回显)</title>
     </head>
     <body>
+        <a href='../index.html' style='position:absolute;top:20px;left:20px;text-decoration:none;color:white;'><i class='fas fa-home' style='font-size:20px;'></i>&#160Home</a>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <h1>有回显的XXE漏洞</h1>
 <?php
     $xmlStr = $_GET['xml'];
@@ -29,6 +31,6 @@
 
 ?>
 <br/><br/><br/>
-<a href="nofeedback.html" style='color:green;'>无回显的XXE漏洞&#160<i class='fas fa-arrow-right'></i></a>
+<a href="nofeedback.html" style='color:yellow;'>无回显的XXE漏洞&#160<i class='fas fa-arrow-right'></i></a>
 </body>
 </html>

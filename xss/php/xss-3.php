@@ -2,10 +2,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <link href="../css/result.css" rel="stylesheet">
-<link href="../../fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+<link href="../../fontawesome/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
 <title>XSS-3</title>
 </head>
 <body>
+<a href='../../index.html' style='position:absolute;top:20px;left:20px;text-decoration:none;color:white;'><i class='fas fa-home' style='font-size:20px;'></i>&#160Home</a>
 <br /><br /><br /><br /><br />
 <h1>循环过滤关键字的XSS(大小写敏感)</h1>
 <form action="xss-3.php" method="get">
