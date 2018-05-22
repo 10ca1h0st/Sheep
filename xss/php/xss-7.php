@@ -1,6 +1,7 @@
 ﻿<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="../css/result.css" rel="stylesheet">
 <link href="../../fontawesome/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
 <title>XSS-7</title>
@@ -28,35 +29,26 @@ else{
 
 echo "<!--绕过方法:no.jpg' onerror='alert(\"xss\");-->";
 ?>
-<div style='position: absolute;top:100px;'>
-<table style='text-align:left;' cellspacing="20">
-    <tr><th>关卡列表:</th></tr>
-    <tr>
-        <td><a href="xss-1.php" style='color:yellow;'>最基本的XSS&#160<i class='fas fa-arrow-right'></i></a></td>
-    </tr>
-    <tr>
-        <td><a href="xss-2.php" style='color:yellow;'>闭合标签的XSS&#160<i class='fas fa-arrow-right'></i></a></td>
-    </tr>
-    <tr>
-        <td><a href="xss-3.php" style='color:yellow;'>循环过滤关键字的XSS(大小写敏感)&#160<i class='fas fa-arrow-right'></i></a></td>
-    </tr>
-    <tr>
-        <td><a href="xss-4.php" style='color:yellow;'>过滤关键字的XSS(大小写不敏感)&#160<i class='fas fa-arrow-right'></i></a></td>
-    </tr>
-    <tr>
-        <td><a href="xss-5.php" style='color:yellow;'>过滤单引号和双引号的XSS&#160<i class='fas fa-arrow-right'></i></a></td>
-    </tr>
-    <tr>
-        <td><a href="xss-6.php" style='color:yellow;'>使用htmlspecialchars函数过滤输入的XSS&#160<i class='fas fa-arrow-right'></i></a></td>
-    </tr>
-    <tr>
-        <td><a href="xss-7.php" style='color:yellow;'>使用img标签的onerror属性实现XSS&#160<i class='fas fa-arrow-right'></i></a></td>
-    </tr>
-    <tr>
-        <td><a href="xss-impossible.php" style='color:yellow;'>无法绕过产生XSS&#160<i class='fas fa-arrow-right'></i></a></td>
-    </tr>
-</table>
+<div style='position: absolute;top:100px;left:20px;'>
+    <div class="dropdown">
+        <button class="btn btn-outline-dark dropdown-toggle" style="font-size:20px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            关卡列表
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a href="xss-1.php" class="dropdown-item" style="color:green;">最基本的XSS</a>
+            <a href="xss-2.php" class="dropdown-item" style='color:green;'>闭合标签的XSS</a>
+            <a href="xss-3.php" class="dropdown-item" style="color:green;">循环过滤关键字的XSS(大小写敏感)</a>
+            <a href="xss-4.php" class="dropdown-item" style="color:green;">过滤关键字的XSS(大小写不敏感)</a>
+            <a href="xss-5.php" class="dropdown-item" style="color:green;">过滤单引号和双引号的XSS</a>
+            <a href="xss-6.php" class="dropdown-item" style="color:green;">使用htmlspecialchars函数过滤输入的XSS</a>
+            <a href="xss-7.php" class="dropdown-item" style="color:gray;">使用img标签的onerror属性实现XSS</a>
+            <a href="xss-impossible.php" class="dropdown-item" style="color:green;">无法绕过产生XSS</a>
+        </div>
+    </div>
 </div>
+<script src="../../jquery.js"></script>
+<script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <script>
 
     function help(){
