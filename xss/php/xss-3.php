@@ -27,7 +27,7 @@ function xss_filter($xss) {
 	while(str_replace("</script>","",$xss)!=$xss) {
 		$xss=str_replace("</script>","",$xss);
 	}
-	Return $xss;
+	return $xss;
 }
 $xss = $_GET['xss_input'];
 $xss=xss_filter($xss);

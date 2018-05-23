@@ -26,7 +26,7 @@ function xss_filter($xss) {
 	$xss=str_replace("'","",$xss);
 	$xss=str_ireplace("\"","",$xss);
 	$xss=str_replace(";","",$xss);
-	Return $xss;
+	return $xss;
 }
 $xss = $_GET['xss_input'];
 $xss=xss_filter($xss);
