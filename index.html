@@ -31,11 +31,13 @@
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">联系我们</h4>
               <ul class="list-unstyled">
-                <li><a href="qq.jpeg" class="text-white navbar-brand" title="QQ"><i class="fab fa-qq" style='color:blue;'></i>&nbsp;QQ</a></li>
+                <li><a href="#" class="text-white navbar-brand" title="QQ" id="showQQ"><i class="fab fa-qq" style='color:blue;'></i>&nbsp;QQ</a></li>
+                <img src="qq.jpeg" style="position: absolute;z-index: 9999;display: none;" height="200px" />
                 <br/>
-                <li><a href='wechat.jpeg' class="text-white navbar-brand" title="微信"><i class="fab fa-weixin" style='color:green;'></i>&nbsp;Wechat</a></li>
+                <li><a href="#" class="text-white navbar-brand" title="微信" id="showWechat"><i class="fab fa-weixin" style='color:green;'></i>&nbsp;Wechat</a></li>
+                <img src="wechat.jpeg" style="position: absolute;z-index: 9999;display: none;" height="200px" />
                 <br/>
-                <li><a href="https://github.com/10ca1h0st/Sheep" class="text-white navbar-brand" title="https://github.com/10ca1h0st/Sheep"><i class="fab fa-github" style='color:black;'></i>&nbsp;Github</a></li>
+                <li><a href="https://github.com/10ca1h0st/Sheep" class="text-white navbar-brand" title="https://github.com/10ca1h0st/Sheep" target="_blank"><i class="fab fa-github" style='color:black;'></i>&nbsp;Github</a></li>
                 <br/>
                 <li><a href="#" class="text-white navbar-brand" title="iam10ca1h0st@aliyun.com"><i class="fas fa-envelope" style='color:black;'></i>&nbsp;Email</a></li>
               </ul>
@@ -210,6 +212,31 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="jquery.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        $("#showQQ").mouseover(
+          function(){
+            $(this).parent().next().show();
+          }
+        );
+        $("#showQQ").mouseout(
+          function(){
+            $(this).parent().next().hide();
+          }
+        );
+
+        $("#showWechat").mouseover(
+          function(){
+            $(this).parent().next().show();
+          }
+        );
+        $("#showWechat").mouseout(
+          function(){
+            $(this).parent().next().hide();
+          }
+        );
+      })
+    </script>
 
   </body>
 </html>
