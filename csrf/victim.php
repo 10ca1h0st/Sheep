@@ -3,12 +3,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <link href="./css/result.css" rel="stylesheet">
 <link href="../fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
-<title>不验证Cookie的CSRF</title>
+<title>CSRF</title>
 </head>
 <body>
 <a href='../index.html' style='position:absolute;top:20px;left:20px;text-decoration:none;color:white;'><i class='fas fa-home' style='font-size:20px;'></i>&#160Home</a>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<h1>不验证Cookie的CSRF</h1>
+<h1>CSRF</h1>
 <?php
 
     @ $username = addslashes($_GET['username']);
@@ -32,10 +32,13 @@
     $result=$db->query($query);
     $num_result=$result->num_rows;
     if($num_result != 1){
-        die('<h2>login failed</h2>');
+        die('login failed');
     }
+
+    session_start();
+
 ?>
-<form action="pay.php" method="get">
+<form action="pay.php" method="post">
     <p>转账对象:<input type="text" name="to" size="40" /></p>
     <p>转账金额:<input type="text" name="money" size="40" /></p>
     <input type="submit" name="pay" value="转账" />

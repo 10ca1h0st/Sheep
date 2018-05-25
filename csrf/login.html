@@ -46,11 +46,7 @@
                                         <em>请输入密码</em>
                                     </div>
                                 </div>
-                                <nobr>
-                                <button type="button" class="btn btn-primary" id='signin'>登录(不验证Cookie的CSRF)</button>
-                                
-                                <button type="button" class="btn btn-primary" id='signin_medium'>登录(验证Cookie的CSRF)</button>
-                                </nobr>                            
+                                <button type="button" class="btn btn-primary" id='signin'>登录</button>                         
                             </form>
                         </div>
                         </div>
@@ -113,52 +109,6 @@
         }
     }
 
-    //csrf medium
-    var signin_medium=document.getElementById('signin_medium');
-    if(window.addEventListener){
-        signin_medium.addEventListener('click',check_medium,false);
-    }
-    else{
-        signin_medium.attachEvent('onclick',check_medium);
-    }
-    
-    var closes=$('.close');
-    
-    closes.on('click',hideClose);
-    
-    
-    
-    function hideClose(e){
-        
-        e=window.event || e;
-        var obj=e.target?e.target:e.srcElement;
-        var $obj_j = $(obj);
-        
-        var $p=$($obj_j.parent()[0]);
-        $p.addClass('hidden');
-    }
-    
-    
-    function check_medium(e){
-        e= window.event || e;
-        var username=document.getElementById('stu_num');
-        var password=document.getElementById('password');
-        if(username.value==''){
-            var no_num=$('#login_check_n');
-            no_num.removeClass('hidden');
-        }
-        else if(password.value==''){
-            var no_pass=$('#login_check_p');
-            no_pass.removeClass('hidden');
-        }
-        else{
-            e.preventDefault();
-            if(window.event){
-                window.event.returnValue=false;
-            }
-            window.location.href='./victim_medium.php?'+'username='+username.value+'&password='+password.value;
-        }
-    }
     
 </script>
 
