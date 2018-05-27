@@ -1,2 +1,2 @@
-rd /s /Q %1
+rd /S /Q %1
 pause
