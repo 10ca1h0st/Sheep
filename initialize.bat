@@ -11,21 +11,27 @@ echo password:%password% >> %mypath%configure
 :mysql import Sheep.sql
 mysql -u%name% -p%password% -e"source %mypath%Sheep.sql"
 
-set result=%errorlevel%
+IF ERRORLEVEL 1 goto fail
+IF ERRORLEVEL 0 goto success
 
-IF NOT %result% == 0 (
-    echo you input wrong username or password
-    pause
-)else (
+:fail
+echo you input wrong username or password
+pause
+exit
 
-    :move Sheep to Apache root directory
-    cd \
-    set /p despath=please input your Apache root directory:
-    cd /D %despath%
-    MD Sheep
-    @xcopy %mypath:~0,-1% .\Sheep /E
 
-    :clean
-    cd Sheep
-    clean.bat %mypath:~0,-1%
-)
+:success
+
+:move Sheep to Apache root directory
+:use setlocal enabledelayedexpansion because bat regard all statements in a () as a statement
+
+cd \
+set /p despath=please input your Apache root directory:
+cd /D %despath%
+MD Sheep
+@xcopy %mypath:~0,-1% .\Sheep /E /Y
+
+
+:clean
+cd Sheep
+clean.bat %mypath:~0,-1%
