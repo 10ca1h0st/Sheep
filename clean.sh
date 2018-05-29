@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -r $1
+rm -rf $1
